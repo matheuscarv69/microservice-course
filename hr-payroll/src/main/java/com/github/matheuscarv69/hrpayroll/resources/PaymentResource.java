@@ -1,8 +1,10 @@
 package com.github.matheuscarv69.hrpayroll.resources;
 
 import com.github.matheuscarv69.hrpayroll.entities.Payment;
+import com.github.matheuscarv69.hrpayroll.entities.Worker;
 import com.github.matheuscarv69.hrpayroll.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
