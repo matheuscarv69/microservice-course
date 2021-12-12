@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import src.domain.entity.Worker;
 import src.domain.exception.WorkerNotFoundException;
-import src.domain.usecase.GetWorker;
+import src.domain.usecase.GetWorkerUsecase;
 import src.infrastructure.repository.WorkerRepository;
 
 @Service
-public class GetWorkerByIdService implements GetWorker {
+public class GetWorkerByIdService implements GetWorkerUsecase {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 

@@ -25,7 +25,7 @@ public class PaymentController {
             @PathVariable Long workerId,
             @PathVariable Integer workedDays
     ) {
-        log.info("Receiving request for get Payment of Worker: {workerid}", workerId);
+        log.info("Receiving request for get Payment of Worker: {}", workerId);
         var payment = getPaymentService.getPaymentByWorkerId(workerId, workedDays);
 
         return ResponseEntity.ok(new PaymentResponse(payment));

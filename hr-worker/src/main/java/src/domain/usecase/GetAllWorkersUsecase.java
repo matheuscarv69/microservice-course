@@ -4,8 +4,7 @@ import src.domain.entity.Worker;
 
 import java.util.List;
 
-// TODO add Usecase posfix
-public interface GetAllWorkers {
+public interface GetAllWorkersUsecase {
 
     List<Worker> getWorkers();
 

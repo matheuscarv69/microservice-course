@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import src.application.response.WorkerResponse;
-import src.domain.usecase.GetAllWorkers;
-import src.domain.usecase.GetWorker;
+import src.domain.usecase.GetAllWorkersUsecase;
+import src.domain.usecase.GetWorkerUsecase;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController // TODO change path
-@RequestMapping("/v1/worker")
+@RestController
+@RequestMapping("/v1/workers")
 public class WorkerController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private GetAllWorkers getAllWorkersService;
+    private GetAllWorkersUsecase getAllWorkersService;
 
     @Autowired
-    private GetWorker getWorker;
+    private GetWorkerUsecase getWorkerService;
 
     @GetMapping
     public ResponseEntity<List<WorkerResponse>> getAllWorkers() {
@@ -44,7 +44,7 @@ public class WorkerController {
     public ResponseEntity<WorkerResponse> getWorkerById(@PathVariable Long id) {
         log.info("Receiving request for Get Worker by Id");
 
-        var worker = getWorker.getWorkerById(id);
+        var worker = getWorkerService.getWorkerById(id);
         var response = new WorkerResponse(worker);
 
         return ResponseEntity.ok(response);

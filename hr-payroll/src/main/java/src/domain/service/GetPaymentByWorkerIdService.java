@@ -15,7 +15,7 @@ public class GetPaymentByWorkerIdService implements GetPaymentUsecase {
 
     @Override
     public Payment getPaymentByWorkerId(Long workerId, Integer workedDays) {
-        log.info("Getting Payment by the Worker: {workerId}", workerId);
+        log.info("Getting Payment by the Worker: {}", workerId);
 
         return new Payment("Bob", BigDecimal.valueOf(200.0), workedDays);
 
