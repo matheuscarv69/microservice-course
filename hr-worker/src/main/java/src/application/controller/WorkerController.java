@@ -15,7 +15,7 @@ import src.domain.usecase.GetWorker;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
+@RestController // TODO change path
 @RequestMapping("/v1/worker")
 public class WorkerController {
 
